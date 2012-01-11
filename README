@@ -3,5 +3,5 @@ This is a Derelict-like binding for libsndfile.
 This depends on Derelict 2.
 http://www.dsource.org/projects/derelict
 
-libsndfile is a great library that read and write a variety of lossless sound files.
+libsndfile is a great library that read and write a variety of audio files.
 http://www.mega-nerd.com/libsndfile/
