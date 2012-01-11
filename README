@@ -1,5 +1,6 @@
 This is a Derelict-like binding for libsndfile.
 
-This depends on Derelict.
+This depends on Derelict 2.
+http://www.dsource.org/projects/derelict
 
 No license yet! I'm asking libsndfile's author. Please wait a bit before using. :)
