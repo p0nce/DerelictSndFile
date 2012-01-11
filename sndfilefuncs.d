@@ -26,7 +26,7 @@
  */
 /**
  * IMPORTANT: Despite this binding being public domain you still
- * MUST comply with libsndfile licensing if you use it.
+ * MUST comply with the libsndfile licence terms if you use it.
  * http://www.mega-nerd.com/libsndfile/
  */
 module gfm.libsndfile.sndfilefuncs;
