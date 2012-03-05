@@ -1,11 +1,11 @@
 /**
  * This is free and unencumbered software released into the public domain.
- * 
+ *
  * Anyone is free to copy, modify, publish, use, compile, sell, or
  * distribute this software, either in source code form or as a compiled
  * binary, for any purpose, commercial or non-commercial, and by any
  * means.
- * 
+ *
  * In jurisdictions that recognize copyright laws, the author or authors
  * of this software dedicate any and all copyright interest in the
  * software to the public domain. We make this dedication for the benefit
@@ -13,7 +13,7 @@
  * successors. We intend this dedication to be an overt act of
  * relinquishment in perpetuity of all present and future rights to this
  * software under copyright law.
- * 
+ *
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
@@ -21,7 +21,7 @@
  * OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
  * ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
  * OTHER DEALINGS IN THE SOFTWARE.
- * 
+ *
  * For more information, please refer to <http://unlicense.org/>
  */
 /**
@@ -29,7 +29,7 @@
  * MUST comply with the libsndfile licence terms if you use it.
  * http://www.mega-nerd.com/libsndfile/
  */
-module gfm.libsndfile.sndfiletypes;
+module derelict.sndfile.sndfiletypes;
 
 /* This is the version 1.0.X header file. */
 version = SNDFILE_1;
@@ -42,7 +42,7 @@ version = SNDFILE_1;
 */
 
 enum
-{    
+{
     /* Major formats. */
     SF_FORMAT_WAV          = 0x010000,        /* Microsoft WAV format (little endian default). */
     SF_FORMAT_AIFF         = 0x020000,        /* Apple/SGI AIFF format (big endian). */
@@ -254,7 +254,7 @@ enum
 */
 
 enum
-{    
+{
     SF_ERR_NO_ERROR               = 0,
     SF_ERR_UNRECOGNISED_FORMAT    = 1,
     SF_ERR_SYSTEM                 = 2,
@@ -267,7 +267,7 @@ enum
 */
 
 enum
-{    
+{
     SF_CHANNEL_MAP_INVALID = 0,
     SF_CHANNEL_MAP_MONO = 1,
     SF_CHANNEL_MAP_LEFT,                    /* Apple calls this 'Left' */
@@ -376,12 +376,12 @@ struct SF_INSTRUMENT
     int loop_count ;
 
     struct Loop
-    {    
+    {
         int mode;
         uint start;
         uint end;
         uint count;
-    } 
+    }
     Loop[16] loops; /* make variable in a sensible way */
 }
 
@@ -435,7 +435,7 @@ alias extern(C) sf_count_t function(const void *ptr, sf_count_t count, void *use
 alias extern(C) sf_count_t function(void *user_data) sf_vio_tell;
 
 struct SF_VIRTUAL_IO
-{    
+{
     sf_vio_get_filelen  get_filelen;
     sf_vio_seek         seek;
     sf_vio_read         read;
