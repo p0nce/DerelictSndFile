@@ -116,5 +116,5 @@ __gshared
     da_sf_read_double sf_read_double;
     da_sf_write_double sf_write_double;
     da_sf_close sf_close;
-    da_sf_write_sync sf_write_sync ;
+    da_sf_write_sync sf_write_sync;
 }
