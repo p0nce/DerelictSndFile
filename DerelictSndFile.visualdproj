@@ -44,7 +44,7 @@
   <ignoreUnsupportedPragmas>0</ignoreUnsupportedPragmas>
   <otherDMD>0</otherDMD>
   <program>$(DMDInstallDir)windows\bin\dmd.exe</program>
-  <imppath>..\Derelict3\import</imppath>
+  <imppath>../Derelict3/import;</imppath>
   <fileImppath />
   <outdir>.</outdir>
   <objdir>$(ConfigurationName)</objdir>
@@ -189,6 +189,14 @@
   <filesToClean>*.obj</filesToClean>
  </Config>
  <Folder name="DerelictSndFile">
+  <Folder name="Derelict3Util">
+   <File path="..\Derelict3\import\derelict\util\exception.d" />
+   <File path="..\Derelict3\import\derelict\util\loader.d" />
+   <File path="..\Derelict3\import\derelict\util\sharedlib.d" />
+   <File path="..\Derelict3\import\derelict\util\system.d" />
+   <File path="..\Derelict3\import\derelict\util\wintypes.d" />
+   <File path="..\Derelict3\import\derelict\util\xtypes.d" />
+  </Folder>
   <File path="import\derelict\sndfile\sndfile.d" />
   <File path="import\derelict\sndfile\sndfilefuncs.d" />
   <File path="import\derelict\sndfile\sndfiletypes.d" />
