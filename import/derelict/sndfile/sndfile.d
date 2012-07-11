@@ -108,6 +108,5 @@ shared static this()
 
 shared static ~this()
 {
-    if(SharedLibLoader.isAutoUnloadEnabled())
-        DerelictSndFile.unload();
+    DerelictSndFile.unload();
 }
