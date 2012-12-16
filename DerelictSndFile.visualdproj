@@ -76,6 +76,10 @@
   <runargs />
   <runCv2pdb>1</runCv2pdb>
   <pathCv2pdb>$(VisualDInstallDir)cv2pdb\cv2pdb.exe</pathCv2pdb>
+  <cv2pdbPre2043>0</cv2pdbPre2043>
+  <cv2pdbNoDemangle>0</cv2pdbNoDemangle>
+  <cv2pdbEnumType>0</cv2pdbEnumType>
+  <cv2pdbOptions />
   <objfiles />
   <linkswitches />
   <libfiles>..\..\externals/Derelict3/Debug/Derelict3.lib</libfiles>
@@ -83,17 +87,10 @@
   <deffile />
   <resfile />
   <exefile>$(OutDir)\$(ProjectName).lib</exefile>
+  <useStdLibPath>1</useStdLibPath>
   <additionalOptions />
   <preBuildCommand />
   <postBuildCommand />
-  <debugtarget>$(TARGETPATH)</debugtarget>
-  <debugarguments />
-  <debugworkingdir />
-  <debugattach>0</debugattach>
-  <debugremote />
-  <debugEngine>1</debugEngine>
-  <debugStdOutToOutputWindow>0</debugStdOutToOutputWindow>
-  <pauseAfterRunning>0</pauseAfterRunning>
   <filesToClean>*.obj;*.cmd;*.build;*.json;*.dep</filesToClean>
  </Config>
  <Config name="Release" platform="Win32">
@@ -172,6 +169,10 @@
   <runargs />
   <runCv2pdb>0</runCv2pdb>
   <pathCv2pdb>$(VisualDInstallDir)cv2pdb\cv2pdb.exe</pathCv2pdb>
+  <cv2pdbPre2043>0</cv2pdbPre2043>
+  <cv2pdbNoDemangle>0</cv2pdbNoDemangle>
+  <cv2pdbEnumType>0</cv2pdbEnumType>
+  <cv2pdbOptions />
   <objfiles />
   <linkswitches />
   <libfiles />
@@ -179,22 +180,16 @@
   <deffile />
   <resfile />
   <exefile>$(OutDir)\$(ProjectName).lib</exefile>
+  <useStdLibPath>1</useStdLibPath>
   <additionalOptions />
   <preBuildCommand />
   <postBuildCommand />
-  <debugtarget>$(TARGETPATH)</debugtarget>
-  <debugarguments />
-  <debugworkingdir />
-  <debugattach>0</debugattach>
-  <debugremote />
-  <debugEngine>0</debugEngine>
-  <debugStdOutToOutputWindow>0</debugStdOutToOutputWindow>
-  <pauseAfterRunning>0</pauseAfterRunning>
   <filesToClean>*.obj;*.cmd;*.build;*.json;*.dep</filesToClean>
  </Config>
  <Folder name="DerelictSndFile">
   <File path="import\derelict\sndfile\sndfile.d" />
   <File path="import\derelict\sndfile\sndfilefuncs.d" />
   <File path="import\derelict\sndfile\sndfiletypes.d" />
+  <File path="import\derelict\sndfile\wrapper.d" />
  </Folder>
 </DProject>
