@@ -1,0 +1,16 @@
+{
+    "name": "derelict-unofficial-sndfile",
+    "description": "A dynamic binding to the libsndfile library.",
+    "homepage": "http://github.com/p0nce/DerelictSndFile",
+    "license": "Boost",
+    "authors": [
+        "ponce"
+    ],
+
+    "targetName": "DerelictSndFile",
+    "targetPath": "lib",
+
+    "dependencies": {
+        "derelict-util": "~master"
+    }
+}
