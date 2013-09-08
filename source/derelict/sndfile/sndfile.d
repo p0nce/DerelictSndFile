@@ -105,8 +105,3 @@ shared static this()
 {
     DerelictSndFile = new DerelictSndFileLoader();
 }
-
-shared static ~this()
-{
-    DerelictSndFile.unload();
-}
