@@ -32,44 +32,45 @@
 module derelict.sndfile.sndfilefuncs;
 
 import derelict.sndfile.sndfiletypes;
+import derelict.util.system;
 
 
-extern(C)
+extern(C) @nogc nothrow
 {
-    alias nothrow SNDFILE*     function(const(char) *path, int mode, SF_INFO *sfinfo) da_sf_open;
-    alias nothrow SNDFILE*     function(int fd, int mode, SF_INFO *sfinfo, int close_desc) da_sf_open_fd;
-    alias nothrow SNDFILE*     function(SF_VIRTUAL_IO *sfvirtual, int mode, SF_INFO *sfinfo, void *user_data) da_sf_open_virtual;
-    alias nothrow int          function(SNDFILE *sndfile) da_sf_error;
-    alias nothrow const(char)* function(SNDFILE *sndfile) da_sf_strerror;
-    alias nothrow const(char)* function(int errnum) da_sf_error_number;
-    alias nothrow int          function(SNDFILE *sndfile) da_sf_perror;
-    alias nothrow int          function(SNDFILE *sndfile, char* str, size_t len) da_sf_error_str;
-    alias nothrow int          function(SNDFILE *sndfile, int command, void *data, int datasize) da_sf_command;
-    alias nothrow int          function(const(SF_INFO) *info) da_sf_format_check;
-    alias nothrow sf_count_t   function(SNDFILE *sndfile, sf_count_t frames, int whence) da_sf_seek;
-    alias nothrow int          function(SNDFILE *sndfile, int str_type, const(char)* str) da_sf_set_string;
-    alias nothrow const(char)* function(SNDFILE *sndfile, int str_type) da_sf_get_string;
-    alias nothrow const(char)* function() da_sf_version_string;
-    alias nothrow sf_count_t   function(SNDFILE *sndfile, void *ptr, sf_count_t bytes) da_sf_read_raw;
-    alias nothrow sf_count_t   function(SNDFILE *sndfile, const void *ptr, sf_count_t bytes) da_sf_write_raw;
-    alias nothrow sf_count_t   function(SNDFILE *sndfile, short *ptr, sf_count_t frames) da_sf_readf_short;
-    alias nothrow sf_count_t   function(SNDFILE *sndfile, const(short) *ptr, sf_count_t frames) da_sf_writef_short;
-    alias nothrow sf_count_t   function(SNDFILE *sndfile, int *ptr, sf_count_t frames) da_sf_readf_int;
-    alias nothrow sf_count_t   function(SNDFILE *sndfile, const(int) *ptr, sf_count_t frames) da_sf_writef_int;
-    alias nothrow sf_count_t   function(SNDFILE *sndfile, float *ptr, sf_count_t frames) da_sf_readf_float;
-    alias nothrow sf_count_t   function(SNDFILE *sndfile, const(float) *ptr, sf_count_t frames) da_sf_writef_float;
-    alias nothrow sf_count_t   function(SNDFILE *sndfile, double *ptr, sf_count_t frames) da_sf_readf_double;
-    alias nothrow sf_count_t   function(SNDFILE *sndfile, const(double) *ptr, sf_count_t frames) da_sf_writef_double;
-    alias nothrow sf_count_t   function(SNDFILE *sndfile, short *ptr, sf_count_t items) da_sf_read_short;
-    alias nothrow sf_count_t   function(SNDFILE *sndfile, const(short) *ptr, sf_count_t items) da_sf_write_short;
-    alias nothrow sf_count_t   function(SNDFILE *sndfile, int *ptr, sf_count_t items) da_sf_read_int;
-    alias nothrow sf_count_t   function(SNDFILE *sndfile, const(int) *ptr, sf_count_t items) da_sf_write_int;
-    alias nothrow sf_count_t   function(SNDFILE *sndfile, float *ptr, sf_count_t items) da_sf_read_float;
-    alias nothrow sf_count_t   function(SNDFILE *sndfile, const(float) *ptr, sf_count_t items) da_sf_write_float;
-    alias nothrow sf_count_t   function(SNDFILE *sndfile, double *ptr, sf_count_t items) da_sf_read_double;
-    alias nothrow sf_count_t   function(SNDFILE *sndfile, const(double) *ptr, sf_count_t items) da_sf_write_double;
-    alias nothrow int          function(SNDFILE *sndfile) da_sf_close;
-    alias nothrow void         function(SNDFILE *sndfile) da_sf_write_sync;
+    alias SNDFILE*     function(const(char) *path, int mode, SF_INFO *sfinfo) da_sf_open;
+    alias SNDFILE*     function(int fd, int mode, SF_INFO *sfinfo, int close_desc) da_sf_open_fd;
+    alias SNDFILE*     function(SF_VIRTUAL_IO *sfvirtual, int mode, SF_INFO *sfinfo, void *user_data) da_sf_open_virtual;
+    alias int          function(SNDFILE *sndfile) da_sf_error;
+    alias const(char)* function(SNDFILE *sndfile) da_sf_strerror;
+    alias const(char)* function(int errnum) da_sf_error_number;
+    alias int          function(SNDFILE *sndfile) da_sf_perror;
+    alias int          function(SNDFILE *sndfile, char* str, size_t len) da_sf_error_str;
+    alias int          function(SNDFILE *sndfile, int command, void *data, int datasize) da_sf_command;
+    alias int          function(const(SF_INFO) *info) da_sf_format_check;
+    alias sf_count_t   function(SNDFILE *sndfile, sf_count_t frames, int whence) da_sf_seek;
+    alias int          function(SNDFILE *sndfile, int str_type, const(char)* str) da_sf_set_string;
+    alias const(char)* function(SNDFILE *sndfile, int str_type) da_sf_get_string;
+    alias const(char)* function() da_sf_version_string;
+    alias sf_count_t   function(SNDFILE *sndfile, void *ptr, sf_count_t bytes) da_sf_read_raw;
+    alias sf_count_t   function(SNDFILE *sndfile, const void *ptr, sf_count_t bytes) da_sf_write_raw;
+    alias sf_count_t   function(SNDFILE *sndfile, short *ptr, sf_count_t frames) da_sf_readf_short;
+    alias sf_count_t   function(SNDFILE *sndfile, const(short) *ptr, sf_count_t frames) da_sf_writef_short;
+    alias sf_count_t   function(SNDFILE *sndfile, int *ptr, sf_count_t frames) da_sf_readf_int;
+    alias sf_count_t   function(SNDFILE *sndfile, const(int) *ptr, sf_count_t frames) da_sf_writef_int;
+    alias sf_count_t   function(SNDFILE *sndfile, float *ptr, sf_count_t frames) da_sf_readf_float;
+    alias sf_count_t   function(SNDFILE *sndfile, const(float) *ptr, sf_count_t frames) da_sf_writef_float;
+    alias sf_count_t   function(SNDFILE *sndfile, double *ptr, sf_count_t frames) da_sf_readf_double;
+    alias sf_count_t   function(SNDFILE *sndfile, const(double) *ptr, sf_count_t frames) da_sf_writef_double;
+    alias sf_count_t   function(SNDFILE *sndfile, short *ptr, sf_count_t items) da_sf_read_short;
+    alias sf_count_t   function(SNDFILE *sndfile, const(short) *ptr, sf_count_t items) da_sf_write_short;
+    alias sf_count_t   function(SNDFILE *sndfile, int *ptr, sf_count_t items) da_sf_read_int;
+    alias sf_count_t   function(SNDFILE *sndfile, const(int) *ptr, sf_count_t items) da_sf_write_int;
+    alias sf_count_t   function(SNDFILE *sndfile, float *ptr, sf_count_t items) da_sf_read_float;
+    alias sf_count_t   function(SNDFILE *sndfile, const(float) *ptr, sf_count_t items) da_sf_write_float;
+    alias sf_count_t   function(SNDFILE *sndfile, double *ptr, sf_count_t items) da_sf_read_double;
+    alias sf_count_t   function(SNDFILE *sndfile, const(double) *ptr, sf_count_t items) da_sf_write_double;
+    alias int          function(SNDFILE *sndfile) da_sf_close;
+    alias void         function(SNDFILE *sndfile) da_sf_write_sync;
 }
 
 
