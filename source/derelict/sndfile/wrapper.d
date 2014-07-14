@@ -4,7 +4,7 @@ import derelict.sndfile.sndfile;
 import std.string;
 
 
-class SoundFileException : Exception
+deprecated("This wrapper will be deprecated, not useful enough")  class SoundFileException : Exception
 {
 public:
     this(string msg)
@@ -14,7 +14,7 @@ public:
 }
 
 // resource class for libsndfile usage
-class SoundFileLibrary
+deprecated("This wrapper will be deprecated, not useful enough") class SoundFileLibrary
 {
     public
     {
@@ -31,7 +31,7 @@ class SoundFileLibrary
 }
 
 // Wrapper for easy libsndfile usage.
-class SoundFile
+deprecated("This wrapper will be deprecated") class SoundFile
 {
     public
     {
