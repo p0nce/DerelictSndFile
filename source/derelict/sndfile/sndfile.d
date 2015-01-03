@@ -44,6 +44,8 @@ private
 
     static if(Derelict_OS_Windows)
         enum libNames = "libsndfile-1.dll";
+    else static if(Derelict_OS_Linux)
+        enum libNames = "libsndfile.so.1,libsndfile.so";
     else
         static assert(0, "Need to implement libsndfile libNames for this operating system.");
 }
