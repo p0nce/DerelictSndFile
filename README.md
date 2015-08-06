@@ -4,11 +4,9 @@ DerelictSndFile
 *Warning: this an unofficial Derelict binding.*
 
 A dynamic binding to [libsndfile](http://www.mega-nerd.com/libsndfile/) for the D Programming Language.
-libsndfile is a great library that read and write a variety of audio files.
+libsndfile is a library that read and write a variety of audio files.
 
-For information on how to build DerelictSndFile and link it with your programs, please see the post [Using Derelict](http://dblog.aldacron.net/derelict-help/using-derelict/) at The One With D.
-
-For information on how to load the libsndfile library via DerelictSndFile, see the page [DerelictUtil for Users](https://github.com/DerelictOrg/DerelictUtil/wiki/DerelictUtil-for-Users) at the DerelictUtil Wiki. In the meantime, here's some sample code.
+Please see the pages [Building and Linking Derelict](http://derelictorg.github.io/compiling.html) and [Using Derelict](http://derelictorg.github.io/using.html), or information on how to build DerelictSndFile and load the libsndfile library at run time. In the meantime, here's some sample code.
 
 ```D
 import derelict.sndfile.sndfile;
