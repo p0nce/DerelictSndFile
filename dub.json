@@ -4,13 +4,13 @@
     "homepage": "https://github.com/p0nce/DerelictSndFile",
     "license": "Boost",
     "authors": [
-        "ponce"
+        "Guillaume Piolat"
     ],
 
     "targetName": "DerelictSndFile",
     "targetPath": "lib",
 
     "dependencies": {
-        "derelict-util": "~>2.0"
+        "derelict-util": "~>3.0-alpha.1"
     }
 }
